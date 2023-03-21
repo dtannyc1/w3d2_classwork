@@ -21,7 +21,7 @@ By the end of this practice, you should be able to
 - Initialize an Array with a default value
 - Use duck typing to allow different classes to interact with your program
 
-Write classes for `Card`, `Board`, and `Game`. Please put each class in its own
+Write classes for `Card`, `Board`, and `Game`. Please put each class in its own  
 file and use `require_relative` to include other files in your program.
 
 ## Card

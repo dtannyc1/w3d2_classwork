@@ -32,7 +32,7 @@ class Board
                     i = rand(0...@grid.length)
                     j = rand(0...@grid[0].length)
                     if @grid[i][j] == nil
-                        @grid[i][j] = Card.new(value, true)
+                        @grid[i][j] = Card.new(value)
                         done = true
                     else
                         i = rand(0...@grid.length)
@@ -60,7 +60,7 @@ class Board
     def reveal(guessed_pos)
         row, col = guessed_pos
         @grid[row][col].reveal
-        return @grid[row][col].card
+        return @grid[row][col]
     end
 
     def won?

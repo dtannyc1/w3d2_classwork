@@ -23,6 +23,7 @@ class Card
     end
 
     def ==(card_2)  #if card 2 is facedown returns false
+        return false if card_2 == nil
         @value == card_2.card
     end
 end

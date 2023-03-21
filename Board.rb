@@ -1,6 +1,10 @@
 require_relative "./Card.rb"
 
+
+
 class Board
+    # attr_accessor :grid     #temporary for build
+
 
     @@all_card = [2,3,4,5,6,7,8,9,10,:J, :Q, :K, :A]
     def initialize(row=4,col=4)
@@ -9,6 +13,11 @@ class Board
 
         populate
     end
+
+    # def []=(position, value)  #temporary for build
+    #     row, col = position
+    #     @grid[row][col] = value
+    # end
 
     def populate
         # maybe make card pairs unique?

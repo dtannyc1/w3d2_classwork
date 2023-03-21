@@ -22,12 +22,7 @@ class Card
         @value.to_s
     end
 
-    def ==(card)
-
+    def ==(card_2)  #if card 2 is facedown returns false
+        @value == card_2.card
     end
 end
-
-card_1 = Card.new(1)
-card_2 = Card.new(2)
-
-card_1 == card_2

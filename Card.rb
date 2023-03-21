@@ -1,8 +1,8 @@
 class Card
 
-    def initialize(value)
+    def initialize(value, faceup=false)
         @value = value
-        @faceup = false
+        @faceup = faceup
     end
 
     def card

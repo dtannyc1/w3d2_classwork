@@ -14,11 +14,6 @@ class Board
         populate
     end
 
-    # def []=(position, value)  #temporary for build
-    #     row, col = position
-    #     @grid[row][col] = value
-    # end
-
     def populate
         # maybe make card pairs unique?
         while @grid.any? {|row| row.any? {|ele| ele == nil}}
@@ -32,7 +27,7 @@ class Board
                     i = rand(0...@grid.length)
                     j = rand(0...@grid[0].length)
                     if @grid[i][j] == nil
-                        @grid[i][j] = Card.new(value)
+                        @grid[i][j] = Card.new(value, true)
                         done = true
                     else
                         i = rand(0...@grid.length)
@@ -44,6 +39,7 @@ class Board
     end
 
     def render
+        system("clear")
         @grid.each do |row|
             new_array = []
             row.each do |ele|
@@ -72,6 +68,26 @@ class Board
             end
         end
         true
+    end
+
+    def set
+        @grid.each do |row|
+            row.each do |ele|
+                ele.hide
+            end
+        end
+    end
+
+    def valid_position?(position)
+        row, col = position
+        return false if !(0...@grid.length).include?(row)
+        return false if !(0...@grid[0].length).include?(col)
+        true
+    end
+
+    def already_revealed?(position)     #returns boolean for if card is faceup at 
+        row, col = position         #position on board
+        @grid[row][col].card != nil
     end
 
 end
